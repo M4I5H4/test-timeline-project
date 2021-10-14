@@ -1,0 +1,217 @@
+/* latin-ext */
+@font-face {
+    font-family: 'Courgette';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/courgette/v8/wEO_EBrAnc9BLjLQAUk1WPoK7Es.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Courgette';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/courgette/v8/wEO_EBrAnc9BLjLQAUk1VvoK.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+body {
+    background-color: #4facf8;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    font: normal 16px/26px 'Courgette', sans-serif;
+    color: #fff;
+    padding: 100px 20px 200px;
+    box-sizing: border-box;
+  }
+
+  /*header*/
+  h1{text-align: center;
+      margin: 10px;
+      padding: 0px;
+      font-size: 60px;
+  }
+
+/*description*/
+  .sub-title{
+    text-align: center;
+    margin-top: 30px;
+    padding: 0px; 
+    font-size: 30px;
+  }
+
+  /*header animation*/
+  span.head-title{
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  span.fade{
+opacity: 1;
+  }
+
+  
+  /*vertical line*/
+  .timeline::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2000px;
+    width: 6px;
+    background-color: #f4f4f4;
+    top: 27%;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    
+  }
+
+/* card design*/
+  .timeline-item {
+    background-color: #f4f4f4;
+    color: black;
+    padding: 15px;
+    margin: 70px 20px;
+    width: 17%;
+    position: relative;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+ }
+ 
+div.timeline-item:hover {
+  background-color: moccasin;
+}
+ 
+ /* timeline circles - after should be for cards flaosting on the left and before for cards on the right */
+
+ .timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -45px;
+  background-color: #f4f4f4;
+  border: 3px solid #777;
+  top: 0;
+  border-radius: 50% 50% 50% 0;
+  z-index: 1;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: -45px;
+  background-color: #f4f4f4;
+  border: 3px solid #777;
+  top: 0;
+  border-radius: 50% 50% 0% 50% ;
+  z-index: 1;
+}
+
+/*
+div:hover::after{
+  background-color: moccasin;
+    transition: 0.5s ease-in;
+}
+
+div:hover::before{
+  background-color: moccasin;
+    transition: 0.5s ease-in;
+
+
+ 
+/* card position - not floating left or right*/ 
+div:nth-of-type(odd) div.timeline-item{left: 30%}
+   
+div:nth-of-type(even) div.timeline-item{left: 50%}
+
+/*timeline dates position and colour*/
+div:nth-of-type(odd)
+span.timeline-item-date{
+ background: #FFAEBC;
+ display: inline-block;
+ color: black;
+ font-weight: bold;
+ padding: 2px;
+ position: absolute;
+ top: 0;
+ right: 0;
+ border-radius: 10px 0px;
+ }
+
+ div:nth-of-type(even)
+ span.timeline-item-date{ 
+   background: #FFAEBC;
+   display: inline-block;
+   font-weight: bold;
+   color:black;
+   padding: 2px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   border-radius: 10px 0px;}
+
+   
+/* timeline card title */
+.timeline-item-title{
+    text-align: center;
+}
+/* timeline card summary */
+.timeline-item-summary{
+  text-align: center;
+}
+
+ /*click for more button*/
+ button{
+  margin: 10px 50px;
+ }
+ .timeline-item-more-info{
+  font-family: 'Courgette', sans-serif;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  
+}
+/*modal css*/
+#modal-container{
+  width: 25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color:#FFAEBC ;
+  margin:8px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgb(59 4 47 / 32%) 20px 20px 30px -15px;
+  color: black;
+}
+
+#modal-image{
+  border-radius: 10px;
+  border: solid white 3px;
+  
+}
+
+#modal-full-descripton{
+  display: block;
+}
+
+#modal-close-button{
+  font-family: 'Courgette', sans-serif;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+}
+
+/*centers the modal*/
+.center{
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%)
+}
